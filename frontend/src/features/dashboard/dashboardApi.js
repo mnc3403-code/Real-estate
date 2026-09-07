@@ -1,0 +1,18 @@
+const API=import.meta.env.VITE_API_BASE_URL||'http://localhost:5000/api'
+async function request(path,options={}){const r=await fetch(`${API}${path}`,{credentials:'include',...options,headers:{'Content-Type':'application/json',...(options.headers||{})}});const d=await r.json().catch(()=>({}));if(!r.ok)throw new Error(d.message||'Request failed');return d}
+export const getOverview=()=>request('/dashboard/overview')
+export const getSaved=()=>request('/saved-properties')
+export const saveProperty=(id)=>request(`/saved-properties/${id}`,{method:'POST'})
+export const unsaveProperty=(id)=>request(`/saved-properties/${id}`,{method:'DELETE'})
+export const getInquiries=()=>request('/inquiries')
+export const createInquiry=(data)=>request('/inquiries',{method:'POST',body:JSON.stringify(data)})
+export const updateInquiry=(id,status)=>request(`/inquiries/${id}`,{method:'PATCH',body:JSON.stringify({status})})
+export const getAppointments=()=>request('/appointments')
+export const createAppointment=(data)=>request('/appointments',{method:'POST',body:JSON.stringify(data)})
+export const updateAppointment=(id,status)=>request(`/appointments/${id}`,{method:'PATCH',body:JSON.stringify({status})})
+export const getAdminUsers=()=>request('/admin/users')
+export const updateAdminUser=(id,data)=>request(`/admin/users/${id}`,{method:'PATCH',body:JSON.stringify(data)})
+export const getAdminProperties=()=>request('/admin/properties')
+export const moderateProperty=(id,status,reason)=>request(`/properties/${id}/moderate`,{method:'PATCH',body:JSON.stringify({status,reason})})
+export const getAdminReports=()=>request('/admin/reports')
+export const updateReport=(id,data)=>request(`/admin/reports/${id}`,{method:'PATCH',body:JSON.stringify(data)})

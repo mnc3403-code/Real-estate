@@ -1,0 +1,4 @@
+import { useEffect,useState } from 'react'
+import { getProperties } from '../services/propertyApi.js'
+function PropertyList(){const [properties,setProperties]=useState([]);const [loading,setLoading]=useState(true);useEffect(()=>{getProperties({limit:6}).then(r=>setProperties(r.properties)).catch(()=>setProperties([])).finally(()=>setLoading(false))},[]);return <section id="projects" className="projects"><h2>Our best projects</h2>{loading?<p>Loading properties...</p>:<div className="projects-grid">{properties.map(p=><div className="project-card" key={p.id}>{p.image_url?<img src={p.image_url} alt={p.title}/>:<div className="project-placeholder"/>}<div className="project-info"><div><p>{p.city}</p><h3>{p.title}</h3></div><span className="price">{new Intl.NumberFormat('en-BD',{style:'currency',currency:p.currency||'BDT',maximumFractionDigits:0}).format(Number(p.price))}</span></div></div>)}</div>}</section>}
+export default PropertyList

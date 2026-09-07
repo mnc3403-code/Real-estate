@@ -1,0 +1,1 @@
+import {Router} from 'express';import {overview} from '../controllers/dashboard.controller.js';import {requireAuth} from '../middleware/auth.middleware.js';const r=Router();r.get('/overview',requireAuth,overview);export default r

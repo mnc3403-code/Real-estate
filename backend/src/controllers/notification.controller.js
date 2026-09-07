@@ -1,0 +1,3 @@
+import {pool} from '../config/database.js'
+export async function list(req,res,next){try{const r=await pool.query('SELECT * FROM notifications WHERE user_id=$1 ORDER BY created_at DESC LIMIT 50',[req.user.user_id]);res.json({success:true,notifications:r.rows})}catch(e){next(e)}}
+export async function read(req,res,next){try{const r=await pool.query('UPDATE notifications SET is_read=true WHERE id=$1 AND user_id=$2 RETURNING *',[req.params.id,req.user.user_id]);if(!r.rows[0])return res.status(404).json({success:false,message:'Notification not found.'});res.json({success:true,notification:r.rows[0]})}catch(e){next(e)}}

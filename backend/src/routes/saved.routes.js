@@ -1,0 +1,1 @@
+import{Router}from'express';import{list,add,remove}from'../controllers/saved.controller.js';import{requireAuth}from'../middleware/auth.middleware.js';import{requireRole}from'../middleware/role.middleware.js';const r=Router();r.use(requireAuth,requireRole('user'));r.get('/',list);r.post('/:propertyId',add);r.delete('/:propertyId',remove);export default r
