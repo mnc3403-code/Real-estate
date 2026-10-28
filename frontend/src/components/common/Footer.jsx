@@ -1,21 +1,3 @@
-<<<<<<< HEAD
-import { assets } from '../../assets/data/assets.js'
-
-function Footer() {
-  return (
-    <footer className="footer">
-      <img src={assets.logo_dark} alt="Logo" />
-      <div className="footer-links">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <p className="copyright">
-        &copy; {new Date().getFullYear()} Real Estate. All rights reserved.
-      </p>
-=======
 import { useState } from 'react'
 import { assets } from '../../assets/data/assets.js'
 
@@ -170,7 +152,6 @@ function Footer({ onNavigate }) {
           </div>
         </div>
       </div>
->>>>>>> 9c75aec (Update Real Estate project)
     </footer>
   )
 }

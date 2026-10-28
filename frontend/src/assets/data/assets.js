@@ -18,89 +18,6 @@ import profile_img_2 from '../images/profile_img_2.png'
 import profile_img_3 from '../images/profile_img_3.png'
 
 export const assets = {
-<<<<<<< HEAD
-    logo,
-    logo_dark,
-    cross_icon,
-    menu_icon,
-    star_icon,
-    header_img,
-    brand_img,
-    project_img_1,
-    project_img_2,
-    project_img_3,
-    project_img_4,
-    left_arrow,
-    right_arrow,
-}
-
-export const projectsData = [
-    {
-      title: "Skyline Haven",
-      price: "$2,50,000",
-      location: "California",
-      image: project_img_1
-    },
-    {
-      title: "Vista Verde",
-      price: "$2,50,000",
-      location: "San Francisco",
-      image: project_img_2
-    },
-    {
-      title: "Serenity Suites",
-      price: "$2,50,000",
-      location: "Chicago",
-      image: project_img_3
-    },
-    {
-      title: "Central Square",
-      price: "$2,50,000",
-      location: "Los Angeles",
-      image: project_img_4
-    },
-    {
-      title: "Vista Verde",
-      price: "$2,50,000",
-      location: "San Francisco",
-      image: project_img_5
-    },
-    {
-      title: "Serenity Suites",
-      price: "$2,50,000",
-      location: "Chicago",
-      image: project_img_6
-    },
-    
-  ];
-
-  export const testimonialsData = [
-    {
-        name: "Sami Hasan",
-        title: "Marketing Manager",
-        image: profile_img_1,
-        alt: "Portrait of sami",
-        rating: 5,
-        text: "From the very first meeting, they understood my vision and helped me find the perfect property. Their attention to detail and commitment to client satisfaction is unmatched."
-    },
-    {
-        name: "Maria Nazmin",
-        title: "UI/UX Designer",
-        image: profile_img_2,
-        alt: "Portrait of maria",
-        rating: 4,
-        text: "From the very first meeting, they understood my vision and helped me find the perfect property. Their attention to detail and commitment to client satisfaction is unmatched."
-    },
-    {
-        name: "Aminur Rahman Bhuiya Tahsin ",
-        title: "Co-Founder",
-        image: profile_img_3,
-        alt: "Portrait of tahsin ",
-        rating: 5,
-        text: "From the very first meeting, they understood my vision and helped me find the perfect property. Their attention to detail and commitment to client satisfaction is unmatched."
-    }
-];
-=======
   logo,
   logo_dark,
   cross_icon,
@@ -838,4 +755,3 @@ export const testimonialsData = [
     text: 'We were looking for a peaceful family home near Dhanmondi Lake for our parents and children. The team was extraordinarily patient, organized 5 viewings, and helped us secure bank financing at the best market rate.'
   }
 ]
->>>>>>> 9c75aec (Update Real Estate project)

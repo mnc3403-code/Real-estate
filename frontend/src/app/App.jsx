@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-import Navbar from '../components/common/Navbar.jsx'
-import Hero from '../pages/Home/Hero.jsx'
-import About from '../components/common/About.jsx'
-import PropertyList from '../features/properties/components/PropertyList.jsx'
-import Testimonials from '../components/common/Testimonials.jsx'
-import ContactForm from '../features/inquiries/components/ContactForm.jsx'
-import Footer from '../components/common/Footer.jsx'
-=======
 import { useState, useEffect } from 'react'
 import Navbar from '../components/common/Navbar.jsx'
 import Hero from '../pages/Home/Hero.jsx'
@@ -30,25 +21,10 @@ import ServicesPage from '../pages/Services/ServicesPage.jsx'
 import ReviewsPage from '../pages/Reviews/ReviewsPage.jsx'
 import ContactPage from '../pages/Contact/ContactPage.jsx'
 
->>>>>>> 9c75aec (Update Real Estate project)
 import Signup from '../pages/Auth/Signup.jsx'
 import Login from '../pages/Auth/Login.jsx'
 import ForgotPassword from '../pages/Auth/ForgotPassword.jsx'
 import Dashboard from '../pages/Dashboard/Dashboard.jsx'
-<<<<<<< HEAD
-import './App.css'
-
-function HomePage() {
-  return (
-    <div className="page">
-      <Navbar />
-      <Hero />
-      <About />
-      <PropertyList />
-      <Testimonials />
-      <ContactForm />
-      <Footer />
-=======
 import { projectsData } from '../assets/data/assets.js'
 import './App.css'
 
@@ -219,23 +195,8 @@ function App() {
           setWishlistOpen(false)
         }}
       />
->>>>>>> 9c75aec (Update Real Estate project)
     </div>
   )
 }
 
-<<<<<<< HEAD
-function App() {
-  const path = window.location.pathname.replace(/\/$/, '') || '/'
-
-  if (path === '/signup') return <Signup />
-  if (path === '/login') return <Login />
-  if (path === '/forgot-password') return <ForgotPassword />
-  if (path === '/dashboard') return <Dashboard />
-
-  return <HomePage />
-}
-
-=======
->>>>>>> 9c75aec (Update Real Estate project)
 export default App
