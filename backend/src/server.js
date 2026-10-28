@@ -25,12 +25,21 @@ app.use(cors({
 app.use(express.json({ limit: '10kb' }))
 
 app.get('/api/health', async (req, res) => {
-  try {
-    await checkDatabaseConnection()
-    res.json({ success: true, database: 'connected' })
-  } catch {
-    res.status(503).json({ success: false, database: 'unavailable' })
+  let dbStatus = 'disconnected'
+  if (process.env.DATABASE_URL) {
+    try {
+      await checkDatabaseConnection()
+      dbStatus = 'connected'
+    } catch {
+      dbStatus = 'unavailable'
+    }
   }
+  res.json({
+    success: true,
+    server: 'running',
+    database: dbStatus,
+    timestamp: new Date().toISOString()
+  })
 })
 
 app.use('/api/auth', authRoutes)

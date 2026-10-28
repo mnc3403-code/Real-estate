@@ -662,6 +662,8 @@ body {
   padding: 24px;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
   max-width: 1040px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .console-tabs {
@@ -691,21 +693,28 @@ body {
 
 .console-form {
   display: grid;
-  grid-template-columns: repeat(3, 1fr) auto;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
   gap: 16px;
   align-items: flex-end;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .console-field {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  min-width: 0;
+  width: 100%;
 }
 
 .console-field label {
   font-size: 13px;
   font-weight: 700;
   color: var(--text-dark);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .console-field select {
@@ -720,6 +729,11 @@ body {
   cursor: pointer;
   outline: none;
   transition: var(--transition);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  text-overflow: ellipsis;
 }
 .console-field select:focus {
   border-color: var(--primary);
@@ -728,19 +742,22 @@ body {
 
 .console-search-btn {
   height: 48px;
-  padding: 0 24px;
+  padding: 0 22px;
   background: var(--primary);
   color: #fff;
   border: none;
   border-radius: var(--radius-md);
   font-size: 15px;
   font-weight: 700;
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   cursor: pointer;
   transition: var(--transition);
   white-space: nowrap;
+  flex-shrink: 0;
+  box-sizing: border-box;
 }
 .console-search-btn:hover {
   background: var(--primary-hover);
@@ -3450,15 +3467,19 @@ body {
 /* ==========================================================================
    Responsive Breakpoints
    ========================================================================== */
-@media (max-width: 1024px) {
-  .hero-headline {
-    font-size: 38px;
-  }
+@media (max-width: 1080px) {
   .console-form {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .console-search-btn {
     grid-column: span 2;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-headline {
+    font-size: 38px;
   }
   .about-home-layout {
     grid-template-columns: 1fr;
@@ -3501,7 +3522,8 @@ body {
     grid-template-columns: 1fr;
   }
   .console-search-btn {
-    grid-column: auto;
+    grid-column: 1;
+    width: 100%;
   }
   .projects-list .project-card {
     flex-direction: column;
